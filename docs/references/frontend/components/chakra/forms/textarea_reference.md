@@ -2,37 +2,19 @@
 
 ## Overview
 
-The `TextArea` component in the Nextpy library is designed to allow users to input multi-line text. It's a form control that can be useful in various scenarios where you need to collect longer, free-form text from a user, such as comments, descriptions, or feedback forms.
-
 The `text_area` component in the Nextpy library is designed to allow users to input multi-line text. It's a form control that can be useful in various scenarios where you need to collect longer, free-form text from a user, such as comments, descriptions, or feedback forms.
 
 ## Anatomy
 
 The `text_area` component can be used in its simplest form or customized with various props to meet the needs of your application.
 
-The `TextArea` component can be used in its simplest form or customized with various props to meet the needs of your application.
-
 ### Basic Usage:
-
-Here's a basic example of how to use the `TextArea` component:
 
 Here's a basic example of how to use the `text_area` component:
 
 ```python
 # Creating a TextArea component with binding to the state variable
-
-text_area = TextArea.create(value=text_area_value, placeholder="Enter your text here...")
-
 text_area_example = xt.text_area(value=text_area_value, placeholder="Enter your text here...")
-
-
-
-from nextpy.components.chakra.forms.textarea import TextArea
-from nextpy.backend.vars import Var
-
-# Creating a state variable to hold the text area value
-text_area_value = Var("")
-
 ```
 
 ### Advanced Usage:
@@ -40,10 +22,8 @@ text_area_value = Var("")
 For more advanced scenarios, you can customize the `TextArea` with additional props:
 
 ```python
-# Customizing the TextArea with error and focus border colors, and event handlers
-
-
-    text_area_custom = TextArea.create(
+# Customizing the text_area with error and focus border colors, and event handlers
+text_area_custom = xt.text_area(
     value=text_area_value,
     placeholder="Enter your text here...",
     error_border_color="red.500",
@@ -52,12 +32,9 @@ For more advanced scenarios, you can customize the `TextArea` with additional pr
     on_focus=lambda event: print("Focused!"),
     on_blur=lambda event: print("Blurred!")
 )
-
 ```
 
 ## Components
-
-The `TextArea` component has several properties you can use to customize its behavior and appearance:
 
 The `text_area` component has several properties you can use to customize its behavior and appearance:
 
