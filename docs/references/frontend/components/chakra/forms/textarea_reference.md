@@ -2,19 +2,37 @@
 
 ## Overview
 
+The `TextArea` component in the Nextpy library is designed to allow users to input multi-line text. It's a form control that can be useful in various scenarios where you need to collect longer, free-form text from a user, such as comments, descriptions, or feedback forms.
+
 The `text_area` component in the Nextpy library is designed to allow users to input multi-line text. It's a form control that can be useful in various scenarios where you need to collect longer, free-form text from a user, such as comments, descriptions, or feedback forms.
 
 ## Anatomy
 
 The `text_area` component can be used in its simplest form or customized with various props to meet the needs of your application.
 
+The `TextArea` component can be used in its simplest form or customized with various props to meet the needs of your application.
+
 ### Basic Usage:
+
+Here's a basic example of how to use the `TextArea` component:
 
 Here's a basic example of how to use the `text_area` component:
 
 ```python
 # Creating a TextArea component with binding to the state variable
+
+text_area = TextArea.create(value=text_area_value, placeholder="Enter your text here...")
+
 text_area_example = xt.text_area(value=text_area_value, placeholder="Enter your text here...")
+
+
+
+from nextpy.components.chakra.forms.textarea import TextArea
+from nextpy.backend.vars import Var
+
+# Creating a state variable to hold the text area value
+text_area_value = Var("")
+
 ```
 
 ### Advanced Usage:
@@ -22,8 +40,10 @@ text_area_example = xt.text_area(value=text_area_value, placeholder="Enter your 
 For more advanced scenarios, you can customize the `TextArea` with additional props:
 
 ```python
-# Customizing the text_area with error and focus border colors, and event handlers
-text_area_custom = xt.text_area(
+# Customizing the TextArea with error and focus border colors, and event handlers
+
+
+    text_area_custom = TextArea.create(
     value=text_area_value,
     placeholder="Enter your text here...",
     error_border_color="red.500",
@@ -32,32 +52,35 @@ text_area_custom = xt.text_area(
     on_focus=lambda event: print("Focused!"),
     on_blur=lambda event: print("Blurred!")
 )
+
 ```
 
 ## Components
 
+The `TextArea` component has several properties you can use to customize its behavior and appearance:
+
 The `text_area` component has several properties you can use to customize its behavior and appearance:
 
-| Prop Name           | Type                      | Description                                                  |
-|---------------------|---------------------------|--------------------------------------------------------------|
-| value               | `Union[Var[str], str]`    | State variable to bind the input value.                      |
-| default_value       | `Union[Var[str], str]`    | The default value of the textarea.                           |
-| placeholder         | `Union[Var[str], str]`    | The placeholder text displayed when the textarea is empty.   |
-| error_border_color  | `Union[Var[str], str]`    | The border color when the textarea is invalid.               |
-| focus_border_color  | `Union[Var[str], str]`    | The border color when the textarea is focused.               |
-| is_disabled         | `Union[Var[bool], bool]`  | If `True`, the textarea will be disabled.                    |
-| is_invalid          | `Union[Var[bool], bool]`  | If `True`, the textarea will display as invalid.             |
-| is_read_only        | `Union[Var[bool], bool]`  | If `True`, the textarea will be read-only.                   |
-| is_required         | `Union[Var[bool], bool]`  | If `True`, the textarea will be required.                    |
-| variant             | `LiteralInputVariant`     | Style variant: "outline", "filled", "flushed", or "unstyled" |
-| name                | `Union[Var[str], str]`    | The name of the textarea form field.                         |
-| style               | `Style`                   | Style object to customize component styles.                  |
-| autofocus           | `bool`                    | If `True`, the textarea will be automatically focused.       |
-| custom_attrs        | `Dict[str, Union[Var, str]]` | Custom attributes for the textarea element.             |
-| on_blur             | `EventHandler`            | Event handler for the blur event.                            |
-| on_change           | `EventHandler`            | Event handler for the change event.                          |
-| on_click            | `EventHandler`            | Event handler for the click event.                           |
-| ...                 | ...                       | Other event handlers for standard HTML events.               |
+| Prop Name          | Type                         | Description                                                  |
+| ------------------ | ---------------------------- | ------------------------------------------------------------ |
+| value              | `Union[Var[str], str]`       | State variable to bind the input value.                      |
+| default_value      | `Union[Var[str], str]`       | The default value of the textarea.                           |
+| placeholder        | `Union[Var[str], str]`       | The placeholder text displayed when the textarea is empty.   |
+| error_border_color | `Union[Var[str], str]`       | The border color when the textarea is invalid.               |
+| focus_border_color | `Union[Var[str], str]`       | The border color when the textarea is focused.               |
+| is_disabled        | `Union[Var[bool], bool]`     | If `True`, the textarea will be disabled.                    |
+| is_invalid         | `Union[Var[bool], bool]`     | If `True`, the textarea will display as invalid.             |
+| is_read_only       | `Union[Var[bool], bool]`     | If `True`, the textarea will be read-only.                   |
+| is_required        | `Union[Var[bool], bool]`     | If `True`, the textarea will be required.                    |
+| variant            | `LiteralInputVariant`        | Style variant: "outline", "filled", "flushed", or "unstyled" |
+| name               | `Union[Var[str], str]`       | The name of the textarea form field.                         |
+| style              | `Style`                      | Style object to customize component styles.                  |
+| autofocus          | `bool`                       | If `True`, the textarea will be automatically focused.       |
+| custom_attrs       | `Dict[str, Union[Var, str]]` | Custom attributes for the textarea element.                  |
+| on_blur            | `EventHandler`               | Event handler for the blur event.                            |
+| on_change          | `EventHandler`               | Event handler for the change event.                          |
+| on_click           | `EventHandler`               | Event handler for the click event.                           |
+| ...                | ...                          | Other event handlers for standard HTML events.               |
 
 ## Notes
 
